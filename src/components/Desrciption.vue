@@ -40,7 +40,7 @@ export default {
     methods: {
         getValue() {
             const afterClick = ''
-            if(!this.deleteItems.match(/[0-9]|\./)) {
+            if(this.deleteItems.match(/[^0-9 ]/g, '') || this.deleteItems.trim() === '') {
                 this.wrong = true
                 setTimeout(() => {
                     this.wrong = false
